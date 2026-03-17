@@ -29,10 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-<<<<<<< HEAD
 , "src/app/layout.js", "src/app/page.js"  ],
-=======
-  ],
->>>>>>> 6d5ee3a (Initial commit with Practical_1 and UNIT_2)
   "exclude": ["node_modules"]
 }
