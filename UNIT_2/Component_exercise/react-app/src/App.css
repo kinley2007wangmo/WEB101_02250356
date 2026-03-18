@@ -1,0 +1,14 @@
+.App {
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  margin-top: 20px;
+}
+
+.profiles-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
