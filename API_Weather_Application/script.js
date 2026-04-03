@@ -354,6 +354,6 @@ async function deleteLocation(id) {
         renderSavedLocations();
 
     } catch (error) {
-        alert(error.message);
+        alert(`Error${error.message}`);
     }
 }
