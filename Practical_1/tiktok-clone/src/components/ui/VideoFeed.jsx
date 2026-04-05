@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import VideoCard from "./VideoCard"
 
 export default function VideoFeed() {
@@ -16,3 +17,16 @@ export default function VideoFeed() {
     </div>
   )
 }
+=======
+import VideoCard from "./VideoCard";
+
+export default function VideoFeed() {
+  return (
+    <div className="max-w-xl mx-auto">
+      <VideoCard />
+      <VideoCard />
+      <VideoCard />
+    </div>
+  );
+}
+>>>>>>> 6d5ee3a (Initial commit with Practical_1 and UNIT_2)

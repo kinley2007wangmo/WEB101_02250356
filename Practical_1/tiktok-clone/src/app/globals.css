@@ -1,1 +1,9 @@
+<<<<<<< HEAD
 @import "tailwindcss";
+=======
+@import "tailwindcss";
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+>>>>>>> 6d5ee3a (Initial commit with Practical_1 and UNIT_2)
