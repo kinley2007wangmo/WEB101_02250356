@@ -157,7 +157,7 @@ async function saveLocation() {
 
         // Add to local saved location (with the ID from the response)
         const savedLocations = {
-            id: item.id,
+            id: data.id,
             name,
             city,
             country,
@@ -197,7 +197,7 @@ async function fetchSavedLocations() {
                 const body = JSON.parse(item.body);
                 city = body.city || 'Unknown City';
                 country = body.country || '';
-                notes = body.noes || '';
+                notes = body.notes || '';
             } catch (e) {
                 //IF not valid JSON, use raw body
                 city = 'Unknown City';
@@ -223,7 +223,7 @@ async function fetchSavedLocations() {
 
 // Render
 function renderSavedLocations() {
-    const container = document.getElementById('saved-location');
+    const container = document.getElementById('saved-locations');
 
     if (savedLocations.length === 0) {
         container.innerHTML = '<p>No saved locations. Add one in the "POST Location" tab.</p>';
@@ -237,8 +237,8 @@ function renderSavedLocations() {
             ${location.country ? `<div><strong>Country:</strong> ${location.country}</div>` : ''}
             ${location.notes ? `<div><strong>Notes:</strong> ${location.notes}</div>` : ''}
             <div class="location-actions">
-                <button class="btn-edit" oneclick="editLocation(${location.id})">Edit</button>
-                <button class="btn-delete" oneclick="deleteLocation(${location.id})">Belete</button>
+                <button class="btn-edit" onclick="editLocation(${location.id})">Edit</button>
+                <button class="btn-delete" onclick="deleteLocation(${location.id})">Delete</button>
             </div>
         </div>
     `).join('');
@@ -307,7 +307,7 @@ async function updateLocation() {
         }
 
         // Update the location in our local array
-        const ndex = savedLocations.findIndex(loc => loc.id == parseInt (id));
+        const index = savedLocations.findIndex(loc => loc.id == parseInt (id));
 
         if (index !== -1) {
             savedLocations[index] = {
@@ -331,7 +331,7 @@ async function updateLocation() {
 
 // DELETE
 async function deleteLocation(id) {
-    if (!MdConfirmationNumber('Are you sure you want to delete this location')) {
+    if (!confirm('Are you sure you want to delete this location')) {
         return;
     }
 
