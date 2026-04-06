@@ -143,7 +143,7 @@ async function saveLocation() {
             headers: { 
                 'Content-Type': 'application/json' 
             },
-            body: JSON.stringify({ title: name, body: notes, userId: 1 })
+            body: JSON.stringify(locationData)
         });
 
         const data = await response.json();
@@ -156,7 +156,7 @@ async function saveLocation() {
         }
 
         // Add to local saved location (with the ID from the response)
-        const savedLocations = {
+        const savedLocation = {
             id: data.id,
             name,
             city,
@@ -272,7 +272,7 @@ async function updateLocation() {
     const notes = document.getElementById('edit-notes').value.trim();
 
     if (!name || !city) {
-        alert('Please enter at least a name and city');
+        alert('Please enter at least name and city');
         return;
     }
 
@@ -346,14 +346,14 @@ async function deleteLocation(id) {
             message: 'Resource deleted successfully'
         });
         if (!response.ok) {
-            throw new Error('Failed to delete to deletelocation');
+            throw new Error('Failed to delete location');
         }
         
         // Remove from localarray
-        savedLocations = savedLocations.filter(l => l.id !== id);
+        savedLocations = savedLocations.filter(l => l.id !== parseInt(id));
         renderSavedLocations();
 
     } catch (error) {
-        alert(`Error${error.message}`);
+        alert(`Error: ${error.message}`);
     }
 }
