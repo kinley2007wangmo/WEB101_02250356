@@ -1,4 +1,4 @@
-#  Weather API Dashboard
+#  Weather API Application
 
 ##  Project Overview
 
@@ -8,8 +8,6 @@ This project is a simple web application that demonstrates the use of RESTful AP
 * Save locations
 * Edit saved locations
 * Delete saved locations
-
----
 
 ##  Features
 
@@ -39,17 +37,11 @@ Deletes a saved location.
 * OpenWeatherMap API
 * JSONPlaceholder API
 
----
-
 ##  Project Structure
 
-```
-project-folder/
-*  index.html   # User Interface
+API_Weather_Application/
+*  index.html    # User Interface
 *  script.js    # Application Logic
-```
-
----
 
 ##  Setup Instructions
 
@@ -57,13 +49,11 @@ project-folder/
 2. Open `script.js`
 3. Replace the API key:
 
-```js
-const WEATHER_API_KEY = 'YOUR_API_KEY';
+```
+const WEATHER_API_KEY = 'YOUR_API_KEY'; eg: 544e395fb9bc413fb14e6c687a1d7384
 ```
 
 4. Open `index.html` in a browser
-
----
 
 ##  How to Use
 
