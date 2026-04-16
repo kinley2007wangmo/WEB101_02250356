@@ -1,11 +1,9 @@
 # TikTok Clone
-
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+A TikTok-style video sharing web application built with `Next.js`
+. This project is bootstrapped using `create-next-app`
 
 ## Getting Started
-
-First, run the development server:
-
+To run the development server, use one of the following commands:
 ```bash
 npm run dev
 # or
@@ -15,11 +13,16 @@ pnpm dev
 # or
 bun dev
 ```
+Once the server is running, open your browser and visit:
+[http://localhost:3000]
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Development
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+You can start editing the application by modifying:
+`app/page.tsx`
+The page will automatically reload as you make changes.
 
+## Fonts
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
 ## Learn More
