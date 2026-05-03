@@ -1,70 +1,46 @@
-#  File Upload Implementation (Next.js)
+#  File Upload App (Next.js + React)
 
 ##  Project Description
+This project is a simple file upload system built using Next.js. It allows users to upload files using both:
+- File selection (click to choose file)
+- Drag and drop functionality
 
-This project is a file upload application built using Next.js. It allows users to upload files from the browser to the server with features like validation, progress tracking, and drag-and-drop functionality.
-
+The upload progress is displayed in real-time using a progress bar.
 
 ##  Features
-
-*  File upload using multipart/form-data
-*  File type and size validation
-*  Upload progress tracking
-*  Drag and drop file upload
-*  Files stored in server (`uploads` folder)
+- File upload using React Hook Form
+- Drag and drop support (react-dropzone)
+- File size validation (max 5MB)
+- Upload progress tracking using Axios
+- Simple and clean UI
+- Backend API upload handling
 
 ##  Technologies Used
+- Next.js (React Framework)
+- React Hook Form
+- Axios
+- React Dropzone
+- FormData API
 
-* Next.js (React Framework)
-* React Hook Form
-* Axios
-* Formidable
-* React Dropzone
+##  Installation
 
-##  Installation & Setup
-
-### 1. Clone the repository (if using Git)
-
-```
-git clone https://github.com/kinley2007wangmo/WEB101_02250356.git
-cd file-upload
-```
-
-### 2. Install dependencies
-
-```
+```bash
 npm install
+npm install react-dropzone axios react-hook-form
 ```
 
-### 3. Run the project
+## Run Project
 
-```
-npm run dev
-```
+Run `npm run dev` and Open `http://localhost:3000`
 
-### 4. Open in browser
+## How It Works
+User selects or drags a file
+File is stored in form state
+On submit, file is sent to /api/upload
+Upload progress is shown in percentage
+Backend stores or processes the file
 
-```
-http://localhost:3000
-```
-
-##  How It Works
-
-1. User selects or drags a file.
-2. File is validated (type & size).
-3. File is sent to backend using Axios.
-4. Backend processes file using Formidable.
-5. File is stored in the `uploads` folder.
-6. Upload progress is displayed to the user.
-
-##  Notes
-
-* Ensure `uploads` folder exists (or it will be created automatically).
-* Maximum file size is 5MB.
-* Supports PDF and image files.
-
-##  Future Improvements
-
-* Multiple file upload
-* File preview before upload
-* Cloud storage integration (e.g., AWS S3)
+##  Limitations
+Only supports single file upload
+Maximum file size is 5MB
+No database storage included (basic file handling only)
