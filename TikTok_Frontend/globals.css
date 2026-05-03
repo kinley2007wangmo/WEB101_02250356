@@ -1,0 +1,130 @@
+/* RESET + BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
+
+/* SMOOTH SCROLL */
+html {
+  scroll-behavior: smooth;
+}
+
+/* LINKS */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* BUTTON DEFAULT */
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: none;
+}
+
+/* VIDEO STYLE (TikTok feel) */
+video {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* MAIN APP LAYOUT */
+.app {
+  width: 100%;
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+/* EACH VIDEO SECTION */
+.video-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  scroll-snap-align: start;
+}
+
+/* OVERLAY CONTENT (caption, username) */
+.video-info {
+  position: absolute;
+  bottom: 80px;
+  left: 15px;
+  z-index: 10;
+}
+
+.video-info h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.video-info p {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+/* RIGHT SIDE ACTIONS (like, comment, share) */
+.video-actions {
+  position: absolute;
+  right: 10px;
+  bottom: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 10;
+}
+
+.video-actions button {
+  color: white;
+  font-size: 20px;
+}
+
+/* SCROLLBAR HIDE (TikTok style) */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* INPUT FIELDS */
+input {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+/* AUTH MODAL (future use) */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: #111;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
+}
+
+/* NICE HOVER EFFECT */
+button:hover {
+  opacity: 0.8;
+  transition: 0.2s;
+}

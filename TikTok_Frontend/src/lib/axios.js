@@ -1,7 +1,5 @@
-// src/lib/api-config.js
 import axios from 'axios';
 
-// Create axios instance with baseURL
 const apiClient = axios.create({
   baseURL: process.env.NEXT_PUBLIC_API_URL || 'http://localhost:8000/api',
   headers: {
@@ -9,7 +7,7 @@ const apiClient = axios.create({
   },
 });
 
-// Request interceptor for adding authorization
+// Add a request interceptor to attach the auth token to every request
 apiClient.interceptors.request.use(
   (config) => {
     const token = localStorage.getItem('token');
