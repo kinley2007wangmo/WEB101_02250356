@@ -1,11 +1,11 @@
-# TikTok Clone (WEB 101 Practical 4)
+# TikTok Clone (Practical 4)
 
-## 📌 Project Overview
+## Project Overview
 This is a TikTok-style full-stack frontend application built using Next.js. It includes user authentication, video feed UI, likes, comments, and basic interaction features.
 
 ---
 
-## 🚀 Features
+##  Features
 
 - User Login / Logout (localStorage based)
 - Register new user
@@ -18,7 +18,7 @@ This is a TikTok-style full-stack frontend application built using Next.js. It i
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - Next.js (React Framework)
 - React Hooks (useState, useEffect)
@@ -27,7 +27,7 @@ This is a TikTok-style full-stack frontend application built using Next.js. It i
 
 ---
 
-## ▶️ How to Run
+##  How to Run
 
 ```bash
 npm install
