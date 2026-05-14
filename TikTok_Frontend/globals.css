@@ -128,3 +128,36 @@ button:hover {
   opacity: 0.8;
   transition: 0.2s;
 }
+
+.commentSection {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.commentSection input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 10px;
+  border: none;
+}
+
+.commentSection button {
+  padding: 10px 15px;
+  background: #ff0050;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.commentsList {
+  margin-top: 20px;
+}
+
+.commentsList p {
+  background: #222;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}

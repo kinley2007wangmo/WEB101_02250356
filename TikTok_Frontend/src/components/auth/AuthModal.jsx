@@ -1,45 +1,107 @@
-import { useState } from 'react';
-import Modal from '../../components/ui/Modal';
-import { LoginForm, SignupForm } from '../../components/auth/AuthForms';
+"use client";
 
-const AuthModal = ({ isOpen, onClose, initialTab = 'login' }) => {
-  const [activeTab, setActiveTab] = useState(initialTab);
+import { useState } from "react";
 
-    const handleSuccess = () => {
-      
+export default function AuthModal({ onClose, onLogin }) {
+
+  const [isLogin, setIsLogin] = useState(true);
+
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = () => {
+
+    // fake login for testing
+    const userData = {
+      username,
+    };
+
+    localStorage.setItem("user", JSON.stringify(userData));
+
+    onLogin(userData);
+
     onClose();
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} title={activeTab === 'login' ? 'Log in' : 'Sign up'}>
-      <div className="mb-4">
-        <div className="flex border-b">
-          <button
-            className={`flex-1 py-2 text-center ${
-              activeTab === 'login' ? 'border-b-2 border-blue-500 font-medium text-blue-500' : 'text-gray-500'
-            }`}
-            onClick={() => setActiveTab('login')}
-          >
-            Log in
-          </button>
-          <button
-            className={`flex-1 py-2 text-center ${
-              activeTab === 'signup' ? 'border-b-2 border-blue-500 font-medium text-blue-500' : 'text-gray-500'
-            }`}
-            onClick={() => setActiveTab('signup')}
-          >
-            Sign up
-          </button>
-        </div>
+    <div className="overlay">
+
+      <div className="modal">
+
+        <h2>
+          {isLogin ? "Login" : "Register"}
+        </h2>
+
+        <input
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+
+        <input
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <button onClick={handleSubmit}>
+          {isLogin ? "Login" : "Register"}
+        </button>
+
+        <p onClick={() => setIsLogin(!isLogin)}>
+          {isLogin
+            ? "Create new account"
+            : "Already have account?"}
+        </p>
+
       </div>
 
-      {activeTab === 'login' ? (
-        <LoginForm onSuccess={handleSuccess} />
-      ) : (
-        <SignupForm onSuccess={handleSuccess} />
-      )}
-    </Modal>
-  );
-};
+      <style jsx>{`
+        .overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0,0,0,0.7);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
 
-export default AuthModal;
+        .modal {
+          background: #111;
+          padding: 30px;
+          border-radius: 20px;
+          width: 300px;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        input {
+          padding: 10px;
+          border-radius: 10px;
+          border: none;
+        }
+
+        button {
+          padding: 10px;
+          border: none;
+          border-radius: 10px;
+          background: #ff0050;
+          color: white;
+          cursor: pointer;
+        }
+
+        p {
+          cursor: pointer;
+          color: gray;
+        }
+      `}</style>
+
+    </div>
+  );
+}

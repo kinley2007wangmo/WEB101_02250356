@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TikTok Clone (WEB 101 Practical 4)
 
-## Getting Started
+## 📌 Project Overview
+This is a TikTok-style full-stack frontend application built using Next.js. It includes user authentication, video feed UI, likes, comments, and basic interaction features.
 
-First, run the development server:
+---
+
+## 🚀 Features
+
+- User Login / Logout (localStorage based)
+- Register new user
+- TikTok-style UI design
+- Video player integration
+- Like button functionality
+- Comment system (real text comments)
+- Share counter
+- Responsive sidebar navigation
+
+---
+
+## 🛠️ Tech Stack
+
+- Next.js (React Framework)
+- React Hooks (useState, useEffect)
+- CSS (custom styling)
+- LocalStorage (for authentication simulation)
+
+---
+
+## ▶️ How to Run
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Open: 
+http://localhost:3000
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Learning Outcome
+- Built frontend UI using Next.js
+- Implemented authentication flow (localStorage)
+- Managed state using React hooks
+- Designed TikTok-style UI
+- Practiced component-based architecture
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Note
+* This project uses frontend-based authentication for demonstration purposes only. No real backend database is connected.
