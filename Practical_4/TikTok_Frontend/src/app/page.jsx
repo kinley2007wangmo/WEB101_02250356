@@ -140,7 +140,7 @@ export default function Home() {
             <div className="commentsList">
               {comments.map((comment, index) => (
                 <p key={index}>
-                  💬 {comment.length}
+                  💬 {comment}
                 </p>
               ))}
 
