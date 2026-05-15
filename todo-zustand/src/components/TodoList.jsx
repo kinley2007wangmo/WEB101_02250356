@@ -1,0 +1,25 @@
+import TodoItem from "./TodoItem";
+import useTodoStore from "../store/todoStore";
+
+function TodoList() {
+  const todos = useTodoStore((state) => state.todos);
+  const clearCompleted = useTodoStore(
+    (state) => state.clearCompleted
+  );
+
+  return (
+    <div>
+      <ul>
+        {todos.map((todo) => (
+          <TodoItem key={todo.id} todo={todo} />
+        ))}
+      </ul>
+
+      <button onClick={clearCompleted}>
+        Clear Completed
+      </button>
+    </div>
+  );
+}
+
+export default TodoList;
