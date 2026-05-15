@@ -1,9 +1,5 @@
-const { PrismaClient } = require("@prisma/client");
+const { PrismaClient } = require('@prisma/client');
 
-const prismaClientSingleton = () => {
-  return new PrismaClient();
-};
-
-const prisma = prismaClientSingleton();
+const prisma = new PrismaClient();
 
 module.exports = prisma;

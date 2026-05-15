@@ -70,16 +70,6 @@ Returns video feed data.
 
 ---
 
-##  Screenshots
-
-(Add backend screenshots here)
-
-- Server terminal running
-- Users API response
-- Videos API response
-
----
-
 ##  Learning Outcome
 
 - Learned Express.js backend development
