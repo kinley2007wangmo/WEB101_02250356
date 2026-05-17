@@ -1,0 +1,2 @@
+echo ".next
+node_modules" >> TikTok_Frontend/.gitignore
