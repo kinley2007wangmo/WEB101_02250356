@@ -41,6 +41,16 @@ export default function LoginPage() {
       setIsLoading(false);
     }
   };
+  const handleLogin = () => {
+    const userData = {
+      username,
+    };
+    localStorage.setItem("user", JSON.stringify(userData));
+
+    onLogin(userData);
+
+    noClose();
+  };
 
   // Rest of your component remains the same
 

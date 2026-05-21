@@ -1,157 +1,169 @@
-# TikTok Clone Full-Stack Application
+# TikTok Clone — Practical 4
 
-##  Project Overview
-
-This project is a full-stack TikTok Clone developed for WEB101. It includes a frontend built with Next.js and a backend server built with Express.js.
-
-The application simulates a TikTok-style social media platform with video feeds, user authentication, likes, comments, and API integration.
+A TikTok-inspired full stack web application developed using Next.js and Node.js.
 
 ---
 
-##  Project Structure
+## Technologies Used
 
-![Project Structure](assets/project-structure.png)
-
----
-
-# Frontend (TikTok_Frontend)
-
-Built using:
-
+### Frontend
 - Next.js
 - React.js
 - Axios
-- React Hooks
-- CSS
+- React Hot Toast
+- React Icons
+- TanStack Query
+
+### Backend
+- Node.js
+- Express.js
+- Prisma ORM
+
+---
 
 ## Features
 
-- TikTok-style UI
-- Video feed
-- Video player
-- Login/Register modal
-- Like system
-- Comment system
-- Share functionality
-- Sidebar navigation
+- User Login
+- Logout Functionality
+- TikTok-style Video Feed
+- Like / Unlike Videos
+- Comment System
+- Share Button
+- User Profile Page
+- Following Page
+- Video Upload Page
+- Responsive Sidebar Navigation
 
-Runs on:
+---
 
-``` id="h63ohw"
+## Frontend Setup
+
+Navigate to frontend folder:
+
+```bash
+cd TikTok_Frontend
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run frontend server:
+
+```bash
+npm run dev
+```
+
+Frontend runs on:
+
+```bash
 http://localhost:3000
 ```
 
 ---
 
-#  Backend (TikTok_Server)
+## Backend Setup
 
-Built using:
+Navigate to backend folder:
 
-- Node.js
-- Express.js
-- Nodemon
-- CORS
+```bash
+cd TikTok_Server
+```
 
-## Features
+Install dependencies:
 
-- REST API server
-- Users API
-- Videos API
-- Frontend-backend communication
-- JSON data handling
+```bash
+npm install
+```
 
-Runs on:
+Run backend server:
 
-``` id="tvmyvl"
+```bash
+npm run dev
+```
+
+Backend runs on:
+
+```bash
 http://localhost:8000
 ```
 
 ---
 
-# Installation Steps
+## Folder Description
 
-##  Clone Repository
+### TikTok_Frontend
+Contains:
+- Pages
+- Components
+- Context API
+- Services
+- Hooks
+- UI Design
+- Video Feed
 
-```bash id="zaj0ln"
-git clone <repository-url>
-```
+### TikTok_Server
+Contains:
+- API Routes
+- Controllers
+- Middleware
+- Prisma Database Configuration
 
 ---
 
-##  Frontend Setup
+## Main Functionalities
 
-```bash id="18avt4"
-cd TikTok_Frontend
-npm install
-npm run dev
-```
+### Authentication
+- Login using username
+- User session stored using localStorage
+- Logout functionality
 
----
+### Video Feed
+- Auto-playing videos
+- Like and unlike system
+- Comments
+- Share feature
 
-##  Backend Setup
+### Profile System
+- Profile page
+- Followers count
+- Following count
+- Uploaded videos count
 
-Open another terminal:
+### Following System
+- Following page
+- View followed users' videos
 
-```bash id="nh6bwb"
+___
+
+## Running the Project
+
+Start Backend:
+
+```bash
 cd TikTok_Server
-npm install
+npm run dev
+```
+
+Start Frontend:
+
+```bash
+cd TikTok_Frontend
 npm run dev
 ```
 
 ---
 
-## API Endpoints
+## Notes
 
-## Users API
-
-``` id="7m79gf"
-GET /api/users
+- Videos are stored inside:
+  
+```bash
+public/videos/
 ```
 
----
+- Authentication is implemented using localStorage for demonstration purposes.
 
-## Videos API
-
-``` id="jlwm0m"
-GET /api/videos
-```
-
----
-
-## Screenshots
-
-* Frontend Running
-![Frontend running](assets/frontend-running.png)
-
-* Backend running
-![Backend running](assets/backend-running.png)
-
-* Home page
-![Home page](assets/home-page.png)
-
-* Login page
-![Login page](assets/login-page.png)
-
-* Register page
-![Register page](assets/register-page.png)
-
-## Frontend
-- Home page
-- Login modal
-- Video feed
-- Like/comment interaction
-
-## Backend
-- Terminal running server
-- API responses
-
----
-
-##  Learning Outcomes
-
-- Built a full-stack web application
-- Implemented frontend and backend communication
-- Created REST APIs using Express.js
-- Used React Hooks for state management
-- Designed responsive UI components
-- Managed project structure using Git and GitHub
+- This project is developed for educational purposes only.

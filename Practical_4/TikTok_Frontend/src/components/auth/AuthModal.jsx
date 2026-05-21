@@ -1,45 +1,88 @@
-import { useState } from 'react';
-import Modal from '../../components/ui/Modal';
-import { LoginForm, SignupForm } from '../../components/auth/AuthForms';
+"use client";
 
-const AuthModal = ({ isOpen, onClose, initialTab = 'login' }) => {
-  const [activeTab, setActiveTab] = useState(initialTab);
+import { useState } from "react";
 
-    const handleSuccess = () => {
-      
+export default function AuthModal({ onClose, onLogin }) {
+
+  const [username, setUsername] = useState("");
+
+  const handleLogin = () => {
+
+    if (!username) return;
+
+    const userData = {
+      username,
+    };
+
+    onLogin(userData);
+
     onClose();
   };
 
   return (
-    <Modal isOpen={isOpen} onClose={onClose} title={activeTab === 'login' ? 'Log in' : 'Sign up'}>
-      <div className="mb-4">
-        <div className="flex border-b">
-          <button
-            className={`flex-1 py-2 text-center ${
-              activeTab === 'login' ? 'border-b-2 border-blue-500 font-medium text-blue-500' : 'text-gray-500'
-            }`}
-            onClick={() => setActiveTab('login')}
-          >
-            Log in
-          </button>
-          <button
-            className={`flex-1 py-2 text-center ${
-              activeTab === 'signup' ? 'border-b-2 border-blue-500 font-medium text-blue-500' : 'text-gray-500'
-            }`}
-            onClick={() => setActiveTab('signup')}
-          >
-            Sign up
-          </button>
-        </div>
+    <div className="overlay">
+
+      <div className="modal">
+
+        <h2>Login</h2>
+
+        <input
+          type="text"
+          placeholder="Enter username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+
+        <button onClick={handleLogin}>
+          Login
+        </button>
+
+        <button onClick={onClose}>
+          Close
+        </button>
+
       </div>
 
-      {activeTab === 'login' ? (
-        <LoginForm onSuccess={handleSuccess} />
-      ) : (
-        <SignupForm onSuccess={handleSuccess} />
-      )}
-    </Modal>
-  );
-};
+      <style jsx>{`
+        .overlay {
+          position: fixed;
+          inset: 0;
+          background: rgba(0,0,0,0.7);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 999;
+        }
 
-export default AuthModal;
+        .modal {
+          background: #111;
+          padding: 30px;
+          border-radius: 20px;
+          width: 300px;
+          display: flex;
+          flex-direction: column;
+          gap: 15px;
+        }
+
+        h2 {
+          color: #ff0050;
+        }
+
+        input {
+          padding: 10px;
+          border-radius: 10px;
+          border: none;
+        }
+
+        button {
+          padding: 10px;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          background: #ff0050;
+          color: white;
+        }
+      `}</style>
+    </div>
+  );
+}
