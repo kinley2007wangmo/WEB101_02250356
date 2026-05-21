@@ -1,16 +1,122 @@
-# React + Vite
+# Todo List Application Using Zustand
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Introduction
 
-Currently, two official plugins are available:
+This project is a simple Todo List Application developed using React and Zustand for state management. The application demonstrates how Zustand can be used to manage global state efficiently in React applications.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+The application allows users to:
 
-## React Compiler
+* Add todos
+* Delete todos
+* Mark todos as completed
+* Clear completed todos
+* Persist data using localStorage
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+# Technologies Used
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* React
+* Zustand
+* Vite
+* JavaScript
+* CSS
+
+# Installation and Setup
+
+## Step 1: Create a new React project
+
+```bash
+npx create vite@latest todo-zustand
+```
+
+---
+
+## Step 2: Navigate to Project Folder
+
+```bash
+cd todo-zustand
+```
+
+---
+
+## Step 3: Install Dependencies
+
+```bash
+npm install
+npm install zustand
+```
+
+---
+
+## Step 4: Run the Application
+
+```bash
+npm run dev
+```
+
+---
+
+# Features
+
+* Add new todo tasks
+* Delete existing tasks
+* Toggle completed tasks
+* Clear completed todos
+* Persistent storage using localStorage
+* Centralized state management with Zustand
+
+---
+
+# Zustand Store Functionalities
+
+The Zustand store contains:
+
+* `todos`
+* `addTodo()`
+* `toggleTodo()`
+* `removeTodo()`
+* `clearCompleted()`
+
+---
+
+# Persistence
+
+The application uses Zustand persist middleware to store todos in browser localStorage. This allows tasks to remain saved even after refreshing the page.
+
+---
+
+# Challenges Faced
+
+* Managing correct import paths
+* Understanding Zustand state management
+* Confusion between `main.jsx` and `index.jsx`
+* Debugging syntax and rendering errors
+
+---
+
+# Learning Outcomes
+
+Through this project, the following concepts were learned:
+
+* React component structure
+* Zustand state management
+* Centralized store creation
+* React hooks
+* localStorage persistence
+* Component communication
+
+---
+
+# Conclusion
+
+This project successfully demonstrated the use of Zustand in React applications. Zustand simplified global state management and reduced the complexity of prop drilling. The persistence middleware also improved the functionality of the application by saving data in localStorage.
+
+---
+
+# References
+
+* React Documentation: https://react.dev/
+* Zustand Documentation: https://github.com/pmndrs/zustand
+* Vite Documentation: https://vitejs.dev/
+* MDN localStorage Documentation: https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage
